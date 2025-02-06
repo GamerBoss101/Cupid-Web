@@ -36,17 +36,16 @@
             {CustomSignature}
             {CustomName}
         </p>
-        <br />
         {#if showImage}
             <img
                 src="{imageSrc}"
                 alt="optional_gif"
-                class="mx-auto w-1/4 lg:w-1/3"
+                class="mx-auto w-1/2 lg:w-1/3"
             />
         {/if}
 
         <div
-            class="mfont card preset-filled-surface-100-900 w-full max-w-lg p-6 text-center mx-auto grid grid-flow-row"
+            class="mfont card preset-filled-surface-100-900 w-full p-6 text-center mx-auto grid grid-flow-row"
         >
             <h1 class="mx-auto text-3xl">Settings</h1>
             <br/>
@@ -134,6 +133,7 @@
                         bind:value="{CustomName}"
                     />
                 </label>
+                <button type="button" class="btn preset-filled-primary-500 col-span-1 lg:col-span-2 ">Save</button>
             </div>
         </div>
     </div>
