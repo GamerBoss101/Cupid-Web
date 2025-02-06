@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pangolin&display=swap');
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	font-family: 'Pangolin', cursive;
+}
+
+.mfont {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+}

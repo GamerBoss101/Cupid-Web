@@ -12,7 +12,7 @@
 </svelte:head>
 
 
-<main class="h-screen flex flex-col bg-pink-200 dark:bg-pink-900">
+<main class="min-h-screen flex flex-col bg-pink-200 dark:bg-pink-900">
 	<NavBar />
 	{@render children()}
 </main>
