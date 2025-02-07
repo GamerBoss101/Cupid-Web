@@ -23,8 +23,9 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-4 justify-center">
-                <a href="/aboutus" class="btn variant-ghost">Create</a>
-                <a href="/tutorials" class="btn variant-ghost">Previews</a>
+                <a href="/create" class="btn variant-ghost">Create</a>
+                <a href="/edit" class="btn variant-ghost">Edit</a>
+                <a href="/previews" class="btn variant-ghost">Previews</a>
             </div>
 
             <!-- Light Switch -->
@@ -36,10 +37,9 @@
         <!-- Mobile Menu -->
         {#if isOpen}
             <div class="md:hidden p-4 space-y-2">
-                <a href="/aboutus" class="btn variant-ghost">About Us</a>
-                <a href="/engineers" class="btn variant-ghost">Engineers</a>
-                <a href="/tutorials" class="btn variant-ghost">Tutorials</a>
-                <a href="/blog" class="btn variant-ghost">Blog</a>
+                <a href="/create" class="btn variant-ghost">Create</a>
+                <a href="/edit" class="btn variant-ghost">Edit</a>
+                <a href="/previews" class="btn variant-ghost">Previews</a>
             </div>
         {/if}
     </div>
