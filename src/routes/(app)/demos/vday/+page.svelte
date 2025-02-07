@@ -43,7 +43,7 @@
                 backgroundColor: backgroundColor,
                 titleTextColor: titleTextColor,
                 signatureTextColor: signatureTextColor,
-            },
+            }
         };
 
         pageData = await (
@@ -93,10 +93,16 @@
                     Your page has been created successfully!
                     <br />
                     Page Code: <code>{pageData.id}</code>
+                    <br />
+                    Page Password: <code>{pageData.password}</code>
+                    <br />
+                    <span class="text-sm">
+                        (Please note this down for future reference if you want to edit the page)
+                    </span>
                 </h2>
                 <br />
                 <a
-                    href="/page/vday/{pageData.id}"
+                    href="/page/{pageData.id}"
                     class="btn preset-filled-primary-500">View Page</a
                 >
             {:else}

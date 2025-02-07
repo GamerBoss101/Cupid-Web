@@ -20,7 +20,8 @@ const vDaySchema = new mongoose.Schema({
         titleTextColor: reqString,
         signatureTextColor: reqString,
     },
-    date: reqString
+    date: reqString,
+    password: reqString
 });
 
 class vDay {
@@ -57,6 +58,7 @@ class vDay {
                 signatureTextColor: colors.signatureTextColor,
             },
             date: new Date().toISOString(),
+            password: this.makeId(5),
         });
         await newEntry.save();
         return newEntry;

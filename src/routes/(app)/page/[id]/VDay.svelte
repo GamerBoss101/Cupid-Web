@@ -1,8 +1,7 @@
 <script lang="ts">
     import "$lib/css/vday.css";
-	import type { PageProps } from './$types';
 
-	let { data }: PageProps = $props();
+    export let data;
 </script>
 
 <svelte:head>
