@@ -2,7 +2,7 @@
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from '@sveltejs/kit';
 
-import vdays from '$lib/ts/vdays';
+import { db } from '$lib/ts/db';
 
 export const POST: RequestHandler = async({ request }: any) => {
     let body = await request.json();
@@ -11,7 +11,7 @@ export const POST: RequestHandler = async({ request }: any) => {
     let { name, message, signature, image, colors } = body;
 
     if (!name || !message || !signature || !image || !colors) return error(400, 'Missing required fields');
-    let newEntry = await vdays.create(name, message, signature, image, colors);
+    let newEntry = await db.createVday(name, message, signature, image, colors);
 
     return new Response(JSON.stringify(newEntry));
 };
