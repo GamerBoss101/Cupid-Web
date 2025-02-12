@@ -1,6 +1,5 @@
 <script lang="ts">
     import TemplateCard from "$lib/components/TemplateCard.svelte";
-    import PreviewCard from "$lib/components/PreviewCard.svelte";
 
     let messages = [
         "Shoot Your Shot!",
@@ -12,13 +11,13 @@
 </script>
 
 
-<main class="container mx-auto space-y-10 px-4 py-20">
+<main class="container mx-auto space-y-10 px-6 py-20">
     <img class="w-1/6 mx-auto" src="/cupid.png" alt="cupid"/>
     <h1 class="text-4xl font-semibold text-center">{currentMessage}</h1>
 
-    <section id="create" class="space-y-2">
-        <h2 class="text-2xl font-semibold">Create a Card Valentine</h2>
-        <p class="text-lg">
+    <section id="create" class="space-y-3">
+        <h2 class="text-2xl font-semibold text-center">Create a Card Valentine</h2>
+        <p class="text-lg text-center">
             Create a valentine for your person/s. 
             You can choose from a variety of templates and customize it to your liking.
         </p>
@@ -28,14 +27,24 @@
         </div>
     </section>
 
-    <section id="preview" class="space-y-2">
-        <h2 class="text-2xl font-semibold">Preview a Card</h2>
-        <p class="text-lg">
-            Preview a valentine card that has been created by someone else.
-        </p>
+    <section id="edit" class="space-y-2">
 
-        <div class="card-grid grid grid-rows-1 gap-4">
-            <PreviewCard />
+        <div class="card bg-pink-100 dark:bg-pink-700 p-4 rounded-lg shadow-md space-y-2 w-1/2 mx-auto">
+            <h2 class="text-2xl font-semibold text-center">Edit a Card</h2>
+            <p class="text-lg">
+                Edit a valentine that you have already created. 
+                You can customize it to your liking.
+            </p>
+    
+            <form>
+                <div class="flex flex-col space-y-2">
+                    <label for="id" class="text-lg">Card Id</label>
+                    <input type="text" id="id" name="id" placeholder="Card Id" class="input" />
+                    <label for="password" class="text-lg">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" class="input" />
+                    <button type="submit" class="btn bg-pink-500 text-white">Edit</button>
+                </div>
+            </form>
         </div>
 
     </section>
