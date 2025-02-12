@@ -23,7 +23,6 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-4 justify-center">
-                <a href="/#previews" class="btn variant-ghost">Previews</a>
                 <a href="/#create" class="btn variant-ghost">Create</a>
                 <a href="/#edit" class="btn variant-ghost">Edit</a>
             </div>
@@ -37,7 +36,6 @@
         <!-- Mobile Menu -->
         {#if isOpen}
             <div class="md:hidden p-4 space-y-2">
-                <a href="/#previews" class="btn variant-ghost">Previews</a>
                 <a href="/#create" class="btn variant-ghost">Create</a>
                 <a href="/#edit" class="btn variant-ghost">Edit</a>
             </div>
