@@ -16,3 +16,11 @@
 	<NavBar />
 	{@render children()}
 </main>
+
+<style>
+	@import url('/Montserrat.css');
+
+	main {
+		font-family: 'Montserrat', sans-serif !important;
+	}
+</style>

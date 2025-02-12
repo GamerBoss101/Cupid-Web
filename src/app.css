@@ -2,10 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import url('/Montserrat.css');
-
 body {
 	min-height: 100vh;
 	margin: 0;
-	font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
 }
