@@ -2,6 +2,9 @@
 
     let arrows = [
         "/love_arrow.png",
+        "/cloud_arrow.png",
+        "/hearts.png",
+        "/more_hearts.png",
     ];
 
     let randomArrow = arrows[Math.floor(Math.random() * arrows.length)];
