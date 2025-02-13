@@ -9,6 +9,8 @@
 
 	let { data }: PageProps = $props();
 
+    console.log(data);
+
     let isValentinesDay = $state(false);
     const currentDate: any = new Date();
     const futureDate: any = new Date("2025-02-14T00:00:00");
@@ -22,10 +24,10 @@
 
 {#if !isValentinesDay}
     <Countdown />
-{:else if data.pageData.pageType == "vday"}
+{:else if data.pageType == "vday"}
     <VDay data={data.pageData} />
-{:else if data.pageData.pageType == "pickup"}
+{:else if data.pageType == "pickup"}
     <Pickup data={data.pageData} />
-{:else if data.pageData.pageType == "bmv"}
+{:else if data.pageType == "bmv"}
     <BMV data={data.pageData} />
 {/if}
