@@ -10,6 +10,9 @@
     <title>Getting Picked Up ;)</title>
     <meta name="description" content="Getting Picked Up ;)" />
 
+    <meta property="og:title" content="You have Mail!" />
+    <meta property="og:image" content="/love_arrow.png" />
+
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>
 

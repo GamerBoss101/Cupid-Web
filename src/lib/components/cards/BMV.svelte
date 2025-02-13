@@ -21,6 +21,9 @@
     <title>The Big Question o_O</title>
     <meta name="description" content="The Big Question o_O" />
 
+    <meta property="og:title" content="You have Mail!" />
+    <meta property="og:image" content="/love_arrow.png" />
+
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>
 

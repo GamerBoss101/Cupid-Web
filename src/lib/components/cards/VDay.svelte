@@ -7,7 +7,9 @@
 <svelte:head>
     <title>Happy Valentine's Day</title>
     <meta name="description" content="Happy Valentine's Day" />
-    <meta name="keywords" content="Happy Valentine's Day" />
+
+    <meta property="og:title" content="You have Mail!" />
+    <meta property="og:image" content="/love_arrow.png" />
 
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>
