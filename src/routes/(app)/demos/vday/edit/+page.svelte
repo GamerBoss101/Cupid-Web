@@ -107,7 +107,7 @@
         {/if}
 
         <div
-            class="mfont card preset-filled-surface-100-900 w-full p-6 text-center mx-auto grid grid-flow-row"
+            class="mfont card preset-filled-surface-100-900 dark:preset-filled-surface-100-900 w-full p-6 text-center mx-auto grid grid-flow-row"
         >
             {#if pageData != null}
                 <h2 class="mx-auto text-2xl">

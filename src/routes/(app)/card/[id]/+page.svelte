@@ -9,17 +9,12 @@
 
 	let { data }: PageProps = $props();
 
-    console.log(data);
-
     let isValentinesDay = $state(false);
     const currentDate: any = new Date();
     const futureDate: any = new Date("2025-02-14T00:00:00");
 
-    if(data.isDev) {
-        isValentinesDay = true;
-    } else {
-        isValentinesDay = currentDate >= futureDate;
-    }
+    if(data.isDev) isValentinesDay = true; 
+    else isValentinesDay = currentDate >= futureDate;
 </script>
 
 {#if !isValentinesDay}
