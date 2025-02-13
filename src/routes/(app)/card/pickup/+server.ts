@@ -15,3 +15,15 @@ export const POST: RequestHandler = async({ request }: any) => {
 
     return new Response(JSON.stringify(newEntry));
 };
+
+export const PUT: RequestHandler = async({ request }: any) => {
+    let body = await request.json();
+    if (!body) return error(400, 'No body');
+
+    let { pickupLine, followUpLine, ButtonsOptions, colors, image, id } = body;
+
+    if (!pickupLine || !followUpLine || !ButtonsOptions || !colors || !image || !id) return error(400, 'Missing required fields');
+    let updatedEntry = await db.updatePickup(pickupLine, followUpLine, ButtonsOptions, colors, image, id);
+
+    return new Response(JSON.stringify(updatedEntry));
+}

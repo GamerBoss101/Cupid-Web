@@ -33,7 +33,7 @@
                 You can customize it to your liking.
             </p>
     
-            <form>
+            <form action="/" method="POST" class="space-y-2">
                 <div class="flex flex-col space-y-2">
                     <label for="id" class="text-lg">Card Id</label>
                     <input type="text" id="id" name="id" placeholder="Card Id" class="input" />

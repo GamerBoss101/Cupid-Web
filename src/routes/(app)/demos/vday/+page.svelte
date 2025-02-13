@@ -123,7 +123,7 @@
                             <span class="label-text">Background Color</span>
                             <select class="select" onchange={onColorBGChange}>
                                 <option value="bg-pink-300">Pink</option>
-                                <option value="bg-red-200">Red</option>
+                                <option value="bg-red-300">Red</option>
                                 <option value="bg-purple-300">Purple</option>
                                 <option value="bg-blue-300">Blue</option>
                                 <option value="bg-green-300">Green</option>

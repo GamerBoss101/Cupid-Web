@@ -51,12 +51,14 @@ export class Pickup {
     async getAll() {
         return await this.model.find();
     }
-    async update(Id: string, data: any) {
-        const updateEntry = this.model.findOneAndUpdate(
-            { id: Id },
-            data,
-            this.upsert,
-        );
-        return updateEntry;
+    async update(Id: string, pickupLine: string, followUpLine: string, ButtonsOptions: Array<any>, colors: any, image: any) {
+         await this.model.updateOne({ id: Id }, {
+            pickupLine: pickupLine,
+            followUpLine: followUpLine,
+            ButtonsOptions: ButtonsOptions,
+            colors: colors,
+            image: image
+        }, this.upsert);
+        return await this.model.findOne({ id: Id });
     }
 }

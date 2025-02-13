@@ -57,7 +57,15 @@ class DB {
         return await this.pickups.create(id, pickupLine, followUpLine, ButtonsOptions, colors, image, this.makeId(5));
     }
 
-    async get(id: string) {
+    async updateVday(name: string, message: string, signature: string, image: any, colors: any, id: string) {
+        return await this.vdays.update(name, message, signature, image, colors, id);
+    }
+
+    async updatePickup(pickupLine: string, followUpLine: string, ButtonsOptions: Array<any>, colors: any, image: any, id: string) {
+        return await this.pickups.update(id, pickupLine, followUpLine, ButtonsOptions, colors, image);
+    }
+
+    async getPageType(id: string) {
         let data: any, pageType: any = null;
 
         data = await this.vdays.get(id);
@@ -65,6 +73,46 @@ class DB {
 
         data = await this.pickups.get(id);
         if(data) pageType = "pickup";
+
+        return pageType;
+    }
+
+    async authenticate(id: string, password: string) {
+        let data: any = null, pageType: any = null;
+        let dbs = [{
+            name: "vday",
+            db: this.vdays
+        }, {
+            name: "pickup",
+            db: this.pickups
+        }], i = 0;
+
+        while(data == null && i < dbs.length) {
+            data = await dbs[i].db.get(id);
+            if(data) pageType = dbs[i].name;
+            i++;
+        }
+
+        if(data == null) return false;
+        return data.password == password;
+    }
+
+    async get(id: string) {
+        let data: any = null, pageType: any = null;
+
+        let dbs = [{
+            name: "vday",
+            db: this.vdays
+        }, {
+            name: "pickup",
+            db: this.pickups
+        }], i = 0;
+
+        while(data == null && i < dbs.length) {
+            data = await dbs[i].db.get(id);
+            if(data) pageType = dbs[i].name;
+            i++;
+        }
 
         if(data == null) return { pageType, pageData: null };
         data.password = undefined;

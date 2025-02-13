@@ -58,12 +58,21 @@ export class vDay {
     async getAll() {
         return await this.model.find();
     }
-    async update(Id: string, data: any) {
-        const updateEntry = this.model.findOneAndUpdate(
-            { id: Id },
-            data,
-            this.upsert,
-        );
-        return updateEntry;
+    async update(Id: string, name: string, message: string, signature: string, image: any, colors: any) {
+        await this.model.updateOne({ id: Id }, {
+            name: name,
+            message: message,
+            signature: signature,
+            image: {
+                enabled: image.enabled,
+                url: image.url,
+            },
+            colors: {
+                backgroundColor: colors.backgroundColor,
+                titleTextColor: colors.titleTextColor,
+                signatureTextColor: colors.signatureTextColor,
+            }
+        });
+        return await this.model.findOne({ id: Id });
     }
 }
