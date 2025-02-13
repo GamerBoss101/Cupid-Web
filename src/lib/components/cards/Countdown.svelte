@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import CardTags from "../CardTags.svelte";
 
     let dayElement: HTMLSpanElement, hourElement: HTMLSpanElement, minuteElement: HTMLSpanElement, secondElement: HTMLSpanElement;
     let days = 0, hours = 0, minutes = 0, seconds = 0;
@@ -29,8 +30,7 @@
 <svelte:head>
     <title>Not Yet :)</title>
 
-    <meta property="og:title" content="You have Mail!" />
-    <meta property="og:image" content="/love_arrow.png" />
+    <CardTags />
 
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import "$lib/css/pickup.css";
+    import CardTags from "../CardTags.svelte";
 
     let { data } = $props();
 
@@ -10,8 +11,7 @@
     <title>Getting Picked Up ;)</title>
     <meta name="description" content="Getting Picked Up ;)" />
 
-    <meta property="og:title" content="You have Mail!" />
-    <meta property="og:image" content="/love_arrow.png" />
+    <CardTags />
 
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>

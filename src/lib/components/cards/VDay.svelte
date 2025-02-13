@@ -1,6 +1,8 @@
 <script lang="ts">
     import "$lib/css/vday.css";
 
+    import CardTags from "../CardTags.svelte";
+
     export let data;
 </script>
 
@@ -8,11 +10,7 @@
     <title>Happy Valentine's Day</title>
     <meta name="description" content="Happy Valentine's Day" />
 
-    <meta property="og:title" content="You have Mail!" />
-    <meta property="og:image" content="/love_arrow.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="500" />
+    <CardTags />
 
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>
