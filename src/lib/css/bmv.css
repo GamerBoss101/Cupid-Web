@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import url('/Pangolin.css');
+@import url('/Montserrat.css');
 
 body {
 	min-height: 100vh;

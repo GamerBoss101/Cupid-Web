@@ -18,6 +18,8 @@ export const actions = {
                 throw redirect(303, `/demos/vday/edit?id=${id}&password=${password}`);
             case "pickup":
                 throw redirect(303, `/demos/pickup/edit?id=${id}&password=${password}`);
+            case "bmv":
+                throw redirect(303, `/demos/bmv/edit?id=${id}&password=${password}`);
             default:
                 return;
         }

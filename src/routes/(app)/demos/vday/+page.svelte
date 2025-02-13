@@ -95,7 +95,7 @@
 
         {#if !Boolean(data.preview)}
             <div
-                class="mfont card preset-filled-surface-100-900 w-full p-6 text-center mx-auto grid grid-flow-row"
+                class="m-font font-semibold card preset-filled-surface-100-900 w-full p-6 text-center mx-auto grid grid-flow-row"
             >
                 {#if pageData != null}
                     <h2 class="mx-auto text-2xl">

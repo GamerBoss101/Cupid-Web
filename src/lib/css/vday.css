@@ -9,3 +9,7 @@ body {
 	margin: 0;
 	font-family: 'Pangolin', cursive !important;
 }
+
+.m-font {
+    font-family: 'Montserrat', sans-serif !important;
+}

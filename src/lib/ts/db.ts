@@ -3,15 +3,33 @@ import mongoose from "mongoose";
 
 import { vDay } from "./vdays";
 import { Pickup } from "./pickup";
+import { BMV } from "./bmv";
 
 
 class DB {
     vdays: vDay;
     pickups: Pickup;
+    bmv: BMV;
+    dbs: any; 
     constructor() {
         this.vdays = new vDay();
         this.pickups = new Pickup();
+        this.bmv = new BMV();
         this.connect();
+        
+        this.dbs = [
+            {
+                name: "vday",
+                db: this.vdays
+            }, {
+                name: "pickup",
+                db: this.pickups
+            },
+            {
+                name: "bmv",
+                db: this.bmv
+            }
+        ];
     }
 
     makeId(length: number) {
@@ -33,6 +51,7 @@ class DB {
         let allData:any = [];
         allData = allData.concat(await this.vdays.getAll());
         allData = allData.concat(await this.pickups.getAll());
+        allData = allData.concat(await this.bmv.getAll());
         let dataIds = allData.map((data: any) => data.id);
         return dataIds.includes(id);
     }
@@ -57,12 +76,26 @@ class DB {
         return await this.pickups.create(id, pickupLine, followUpLine, ButtonsOptions, colors, image, this.makeId(5));
     }
 
+    async createBMV(followUpMessage: string, noFail: boolean, ButtonsOptions: Array<any>, colors: any, image: any) {
+        let id = this.makeId(10);
+
+        while((await this.checkId(id)) == true) {
+            id = this.makeId(10);
+        }
+
+        return await this.bmv.create(id, followUpMessage, noFail, ButtonsOptions, colors, image, this.makeId(5));
+    }
+
     async updateVday(name: string, message: string, signature: string, image: any, colors: any, id: string) {
         return await this.vdays.update(name, message, signature, image, colors, id);
     }
 
     async updatePickup(pickupLine: string, followUpLine: string, ButtonsOptions: Array<any>, colors: any, image: any, id: string) {
         return await this.pickups.update(id, pickupLine, followUpLine, ButtonsOptions, colors, image);
+    }
+
+    async updateBMV(followUpMessage: string, noFail: boolean, ButtonsOptions: Array<any>, colors: any, image: any, id: string) {
+        return await this.bmv.update(id, followUpMessage, noFail, ButtonsOptions, colors, image);
     }
 
     async deleteVday(id: string) {
@@ -73,31 +106,28 @@ class DB {
         return await this.pickups.delete(id);
     }
 
+    async deleteBMV(id: string) {
+        return await this.bmv.delete(id);
+    }
+
     async getPageType(id: string) {
         let data: any, pageType: any = null;
-
-        data = await this.vdays.get(id);
-        if(data) pageType = "vday";
-
-        data = await this.pickups.get(id);
-        if(data) pageType = "pickup";
-
+        let i = 0;
+        while(data == null && i < this.dbs.length) {
+            data = await this.dbs[i].db.get(id);
+            if(data) pageType = this.dbs[i].name;
+            i++;
+        }
         return pageType;
     }
 
     async authenticate(id: string, password: string) {
         let data: any = null, pageType: any = null;
-        let dbs = [{
-            name: "vday",
-            db: this.vdays
-        }, {
-            name: "pickup",
-            db: this.pickups
-        }], i = 0;
+        let i = 0;
 
-        while(data == null && i < dbs.length) {
-            data = await dbs[i].db.get(id);
-            if(data) pageType = dbs[i].name;
+        while(data == null && i < this.dbs.length) {
+            data = await this.dbs[i].db.get(id);
+            if(data) pageType = this.dbs[i].name;
             i++;
         }
 
@@ -107,18 +137,11 @@ class DB {
 
     async get(id: string) {
         let data: any = null, pageType: any = null;
+        let i = 0;
 
-        let dbs = [{
-            name: "vday",
-            db: this.vdays
-        }, {
-            name: "pickup",
-            db: this.pickups
-        }], i = 0;
-
-        while(data == null && i < dbs.length) {
-            data = await dbs[i].db.get(id);
-            if(data) pageType = dbs[i].name;
+        while(data == null && i < this.dbs.length) {
+            data = await this.dbs[i].db.get(id);
+            if(data) pageType = this.dbs[i].name;
             i++;
         }
 
