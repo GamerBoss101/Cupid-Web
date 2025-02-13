@@ -1,9 +1,7 @@
 <script lang="ts">
     import "$lib/css/pickup.css";
 
-    let { data } = $props()
-
-    console.log(data);
+    let { data } = $props();
 
     let pickupState = $state(1);
 </script>

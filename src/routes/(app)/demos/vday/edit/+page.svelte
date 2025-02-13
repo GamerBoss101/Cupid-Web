@@ -2,6 +2,8 @@
     import "$lib/css/vday.css";
     import type { PageProps } from "./$types";
 
+    import { goto } from "$app/navigation";
+
     let { data }: PageProps = $props();
 
     let CustomMessage = $state(data.pageData.message);
@@ -60,6 +62,21 @@
             })
         ).json();
     }
+
+    async function deletePage() {
+        pageData = await (
+            await fetch("/card/vday", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: data.pageData.id }),
+            })
+        ).json();
+
+        return goto("/", { replaceState: true });
+    }
+
 </script>
 
 <svelte:head>
@@ -207,6 +224,11 @@
                         type="button"
                         class="btn preset-filled-primary-500 col-span-1 lg:col-span-2"
                         onclick={createValentinePage}>Save</button
+                    >
+                    <button
+                        type="button"
+                        class="btn preset-filled-primary-500 col-span-1 lg:col-span-2"
+                        onclick={deletePage}>Delete</button
                     >
                 </div>
             {/if}

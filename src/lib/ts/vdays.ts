@@ -75,4 +75,8 @@ export class vDay {
         });
         return await this.model.findOne({ id: Id });
     }
+
+    async delete(Id: string) {
+        return await this.model.deleteOne({ id: Id });
+    }
 }

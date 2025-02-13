@@ -27,3 +27,15 @@ export const PUT: RequestHandler = async({ request }: any) => {
 
     return new Response(JSON.stringify(updatedEntry));
 }
+
+export const DELETE: RequestHandler = async({ request }: any) => {
+    let body = await request.json();
+    if (!body) return error(400, 'No body');
+
+    let { id } = body;
+
+    if (!id) return error(400, 'Missing required fields');
+    let deletedEntry = await db.deletePickup(id);
+
+    return new Response(JSON.stringify(deletedEntry));
+}

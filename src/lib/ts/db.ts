@@ -65,6 +65,14 @@ class DB {
         return await this.pickups.update(id, pickupLine, followUpLine, ButtonsOptions, colors, image);
     }
 
+    async deleteVday(id: string) {
+        return await this.vdays.delete(id);
+    }
+
+    async deletePickup(id: string) {
+        return await this.pickups.delete(id);
+    }
+
     async getPageType(id: string) {
         let data: any, pageType: any = null;
 
