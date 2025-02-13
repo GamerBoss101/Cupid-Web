@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 
-    import VDay from "./VDay.svelte";
+    import VDay from "$lib/components/cards/VDay.svelte";
+    import Pickup from '$lib/components/cards/Pickup.svelte';
 
-    import Countdown from './Countdown.svelte';
+    import Countdown from '$lib/components/cards/Countdown.svelte';
 
 	let { data }: PageProps = $props();
-
 
     let isValentinesDay = $state(false);
     const currentDate: any = new Date();
@@ -19,4 +19,6 @@
     <Countdown />
 {:else if data.pageType == "vday"}
     <VDay data={data.pageData} />
+{:else if data.pageType == "pickup"}
+    <Pickup data={data.pageData} />
 {/if}

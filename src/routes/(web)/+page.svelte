@@ -21,6 +21,7 @@
 
     <section id="create" class="py-20 space-y-3 card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <TemplateCard title="Valentine's Day Card" description="This is a simple valentine's day card" link="/demos/vday" />
+        <TemplateCard title="PickUp Line Card" description="Send someone a pickup line" link="/demos/pickup" />
     </section>
 
     <section id="edit" class="space-y-2 py-20">
