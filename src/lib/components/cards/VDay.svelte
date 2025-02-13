@@ -11,8 +11,8 @@
     <meta property="og:title" content="You have Mail!" />
     <meta property="og:image" content="/love_arrow.png" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="300" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
 
     <link rel="icon" type="image/png" href="/cupid.png" />
 </svelte:head>
