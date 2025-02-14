@@ -28,8 +28,8 @@
 </svelte:head>
 
 <main class="min-h-screen w-full flex flex-col {data.colors.backgroundColor}">
-    <div class="mx-auto container space-y-15 px-4 py-20">
-        <section class="space-y-10 mx-auto my-10">
+    <div class="mx-auto container space-y-10 px-4 py-5">
+        <section class="space-y-5 mx-auto my-10">
             {#if valentineState == 1}
                 {#if data.image.initial.enabled}
                     <img
