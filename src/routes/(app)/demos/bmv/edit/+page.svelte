@@ -166,7 +166,7 @@
         {#if !Boolean(data.preview)}
             <section class="m-font font-semibold mx-auto">
                 <div
-                    class="card preset-filled-surface-100-900 dark:preset-filled-surface-100-900 p-6 text-center mx-auto grid grid-flow-row w-3/4"
+                    class="card preset-filled-surface-100-900 dark:preset-filled-surface-100-900 p-6 text-center mx-auto grid grid-flow-row w-full lg:w-3/4"
                 >
                     {#if pageData != null}
                         <h2 class="mx-auto text-2xl">

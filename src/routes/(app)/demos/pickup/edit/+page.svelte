@@ -140,7 +140,7 @@
         </section>
         <section class="mx-auto">
             <div
-                class="mfont card preset-filled-surface-100-900 dark:preset-filled-surface-100-900 p-6 text-center mx-auto grid grid-flow-row w-3/4"
+                class="mfont card preset-filled-surface-100-900 dark:preset-filled-surface-100-900 p-6 text-center mx-auto grid grid-flow-row w-full lg:w-3/4"
             >
                 {#if pageData != null}
                     <h2 class="mx-auto text-2xl">

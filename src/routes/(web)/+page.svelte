@@ -27,7 +27,7 @@
 
     <section id="edit" class="space-y-2 py-20">
 
-        <div class="card bg-pink-100 dark:bg-pink-700 p-4 rounded-lg shadow-md space-y-2 w-1/2 mx-auto">
+        <div class="card bg-pink-100 dark:bg-pink-700 p-4 rounded-lg shadow-md space-y-2 w-full lg:w-1/2 mx-auto">
             <h2 class="text-2xl font-semibold text-center">Edit a Card</h2>
             <p class="text-lg">
                 Edit a valentine that you have already created. 
