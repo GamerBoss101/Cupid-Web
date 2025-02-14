@@ -103,11 +103,11 @@
 </svelte:head>
 
 <main class="min-h-screen w-full flex flex-col {backgroundColor}">
-    <div class="mx-auto container space-y-15 px-4 py-20">
-        <section class="space-y-10 mx-auto my-10">
+    <div class="mx-auto container space-y-10 px-4 py-5">
+        <section class="space-y-5 mx-auto my-10">
             {#if pickupState != 1}
                 <button
-                    class="btn mx-auto text-3xl p-6 lg:text-5xl lg:p-8 {buttonBGColor}"
+                    class="btn mx-auto text-2xl p-5 lg:text-4xl lg:p-6 {buttonBGColor}"
                     onclick={() => (pickupState = 1)}
                 >
                     Go Back
