@@ -1,38 +1,28 @@
-# sv
+# Cupid Web
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[![Website](https://img.shields.io/website?url=https://cupid.sirblob.me&up_message=Online&down_message=Offine)](https://cupid.sirblob.me/)
+![GitHub Stars](https://img.shields.io/github/stars/GamerBoss101/Cupid-Web?style=flat)
 
-## Creating a project
+A website for creating custom valentines day ecards based of provided templates. 
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tech Stack 
+[![Svelte](https://skillicons.dev/icons?i=svelte)](https://svelte.dev/)
+[![Tailwind](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
+[![MongoDB](https://skillicons.dev/icons?i=mongodb)](https://www.mongodb.com/)
+[![Vercel](https://skillicons.dev/icons?i=vercel)](https://vercel.com/)
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Planning
 
-# create a new project in my-app
-npx sv create my-app
-```
+- [x] Basic Valentines Day Card
+- [x] Pickup Line Card
+- [x] Be my Valentine Card
+- [ ] Choices Valentine Minigame
 
-## Developing
+## Preview
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Donate 
+If you like this website, consider donating to me. It will help me to maintain this project and make more like this.
+<br>
+[![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-red)](https://ko-fi.com/sirblob)
