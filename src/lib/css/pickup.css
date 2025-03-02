@@ -1,6 +1,5 @@
-@import 'tailwindcss';
-
 @import url('/Pangolin.css');
+@import 'tailwindcss';
 
 body {
 	min-height: 100vh;
