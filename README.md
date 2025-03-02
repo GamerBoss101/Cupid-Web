@@ -24,5 +24,5 @@ A website for creating custom valentines day ecards based of provided templates.
 
 ## Donate 
 If you like this website, consider donating to me. It will help me to maintain this project and make more like this.
-<br>
+
 [![Ko-fi](https://img.shields.io/badge/Donate-Ko--fi-red)](https://ko-fi.com/sirblob)

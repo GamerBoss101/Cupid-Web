@@ -13,7 +13,8 @@
 		isDark = !isDark;
 		localStorage.theme = isDark ? "dark" : "light";
 
-		document.documentElement.dataset.theme = localStorage.theme;
+        document.documentElement.dataset.theme = localStorage.theme;
+		document.documentElement.classList.toggle("dark", localStorage.theme === "dark");
 	}
 </script>
 

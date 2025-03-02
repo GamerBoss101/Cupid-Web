@@ -2,7 +2,15 @@
 	import '../../app.css';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	import { onMount } from 'svelte';
+
 	let { children } = $props();
+
+	onMount(() => {
+        document.documentElement.dataset.theme = localStorage.theme;
+		document.documentElement.classList.toggle("dark", localStorage.theme === "dark");
+	});
 </script>
 
 <svelte:head>
@@ -20,8 +28,6 @@
 </main>
 
 <style>
-	@import url('/Montserrat.css');
-
 	main {
 		font-family: 'Montserrat', sans-serif !important;
 	}
