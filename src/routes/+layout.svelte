@@ -1,20 +1,17 @@
 <script lang="ts">
-    import { injectAnalytics } from '@vercel/analytics/sveltekit';
-    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import { injectAnalytics } from "@vercel/analytics/sveltekit";
+	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 
-    import { onMount } from 'svelte';
+	import { onMount } from "svelte";
 
-    let { children } = $props();
+	let { children } = $props();
 
-    onMount(() => {
-        document.documentElement.classList.toggle(
-            'dark',
-            localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        );
-    });
+	onMount(() => {
+        document.documentElement.dataset.theme = localStorage.theme;
+	});
 
-    injectSpeedInsights();
-    injectAnalytics();
+	injectSpeedInsights();
+	injectAnalytics();
 </script>
 
 {@render children()}
